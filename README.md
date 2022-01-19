@@ -5,7 +5,7 @@ This is not a multiplayer terminal based chess application
 - Fully functional chess played through the command line
 - Http based multiplayer
 
-## what is missing
+## What is missing
 - Single player/no server
 - Closing games
 - Seeing a list of current games
@@ -17,6 +17,7 @@ This is not a multiplayer terminal based chess application
 Currently everything is run from python and so requres python to be instlled on your system
 
 ### Server
+#### Manual
 1. Mmake sure chess and flask are installed
     ```
     pip install chess
@@ -27,7 +28,11 @@ Currently everything is run from python and so requres python to be instlled on 
     ```
     python <dir_to_server.py>
     ```
-
+#### Docker
+optionally you can also host a server by running the docker container
+this can be built using the docker file provided or can obtained from docker hub (WARNING THE DOCKER HUB IMAGE MIGHT BE OUTDATED)
+https://hub.docker.com/r/blacklion11/notchess
+Make sure the port you choose (default 5000) is exposed
 ### Client
 1. Run client,py
     ```
@@ -38,7 +43,8 @@ Currently everything is run from python and so requres python to be instlled on 
 - not in a game
   - create
     - Used to create a game, will be promted to give the game a name. this name will be used by your opponent to join
-  - join used to join a game, will be promted to provide a name
+  - join 
+    - used to join a game, will be promted to provide a name. If you close your terminal mid game you can reconnect by using the same username and the join command
 - In a game
   - board
     - returns the games board
