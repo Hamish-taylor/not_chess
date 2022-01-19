@@ -119,19 +119,6 @@ def handle_move():
         response = {"response": str(resp)}
     return jsonify(response), 200, {"Content-Type": "application/json; charset=utf-8"}
 
-@app.route(
-    "/moves",
-    methods=["GET"],
-)
-def valid_moves():
-    global white
-    turn = "white" if white else "black"
-
-    response = {str(turn) : str(board.legal_moves)}
-
-    return jsonify(response), 200, {"Content-Type": "application/json; charset=utf-8"}
-
-
 
 def validate_request(req):
 
