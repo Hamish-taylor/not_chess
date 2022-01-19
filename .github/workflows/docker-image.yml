@@ -21,6 +21,6 @@ jobs:
       run: |
         echo $DOCKER_PASSWORD | docker login -u $DOCKER_USER --password-stdin
     - name: Build the Docker image
-      run: docker build . --file ./docker/dockerfile --tag ${{secrets.DOCKER_USER}}/not_chess:$(date +%s)
+      run: docker build . --file ./docker/dockerfile --tag ${{secrets.DOCKER_USER}}/notchess:$(date +%s)
     - name: Docker push
-      run: docker push ${{secrets.DOCKER_USER}}/not_chess
+      run: docker push ${{secrets.DOCKER_USER}}/notchess
