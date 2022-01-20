@@ -3,9 +3,13 @@ name: Docker Image CI
 on:
   push:
     branches: [ main ]
+    paths:
+      - 'server.py'
   pull_request:
     branches: [ main ]
-
+    paths:
+      - 'server.py'
+      
 jobs:
 
   build:
